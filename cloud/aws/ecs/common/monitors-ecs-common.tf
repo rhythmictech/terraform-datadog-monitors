@@ -27,7 +27,7 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "team:claranet", "created-by:terraform", "category:service"], var.service_cpu_utilization_extra_tags)
+  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "created-by:terraform", "category:service"], var.service_cpu_utilization_extra_tags)
 }
 
 resource "datadog_monitor" "service_memory_utilization" {
@@ -57,7 +57,7 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "team:claranet", "created-by:terraform", "category:service"], var.service_memory_utilization_extra_tags)
+  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "created-by:terraform", "category:service"], var.service_memory_utilization_extra_tags)
 }
 
 resource "datadog_monitor" "service_missing_tasks" {
@@ -88,5 +88,5 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "team:claranet", "created-by:terraform", "category:service"], var.service_missing_tasks_extra_tags)
+  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs", "created-by:terraform", "category:service"], var.service_missing_tasks_extra_tags)
 }

@@ -25,6 +25,6 @@ EOQ
   include_tags        = true
   require_full_window = false
 
-  tags = concat(["env:${var.environment}", "type:caas", "provider:prometheus", "resource:ark", "team:claranet", "created-by:terraform"], var.ark_schedules_extra_tags)
+  tags = concat(["env:${var.environment}", "type:caas", "provider:prometheus", "resource:ark", "created-by:terraform"], var.ark_schedules_extra_tags)
 }
 

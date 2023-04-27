@@ -23,6 +23,6 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:middleware", "provider:apache", "resource:apache", "team:claranet", "created-by:terraform"], var.apache_connect_extra_tags)
+  tags = concat(["env:${var.environment}", "type:middleware", "provider:apache", "resource:apache", "created-by:terraform"], var.apache_connect_extra_tags)
 }
 

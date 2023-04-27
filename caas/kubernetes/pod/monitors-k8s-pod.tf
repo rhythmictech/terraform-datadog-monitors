@@ -24,7 +24,7 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "team:claranet", "created-by:terraform"], var.pod_phase_status_extra_tags)
+  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "created-by:terraform"], var.pod_phase_status_extra_tags)
 }
 
 resource "datadog_monitor" "error" {
@@ -54,7 +54,7 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "team:claranet", "created-by:terraform"], var.error_extra_tags)
+  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "created-by:terraform"], var.error_extra_tags)
 }
 
 resource "datadog_monitor" "terminated" {
@@ -84,6 +84,6 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "team:claranet", "created-by:terraform"], var.terminated_extra_tags)
+  tags = concat(["env:${var.environment}", "type:caas", "provider:kubernetes", "resource:kubernetes-pod", "created-by:terraform"], var.terminated_extra_tags)
 }
 

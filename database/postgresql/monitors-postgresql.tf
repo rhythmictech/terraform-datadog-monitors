@@ -23,7 +23,7 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "team:claranet", "created-by:terraform"], var.postgresql_availability_extra_tags)
+  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "created-by:terraform"], var.postgresql_availability_extra_tags)
 }
 
 resource "datadog_monitor" "postgresql_connection_too_high" {
@@ -52,7 +52,7 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "team:claranet", "created-by:terraform"], var.postgresql_connection_extra_tags)
+  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "created-by:terraform"], var.postgresql_connection_extra_tags)
 }
 
 resource "datadog_monitor" "postgresql_too_many_locks" {
@@ -81,7 +81,7 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "team:claranet", "created-by:terraform"], var.postgresql_lock_extra_tags)
+  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "created-by:terraform"], var.postgresql_lock_extra_tags)
 }
 
 resource "datadog_monitor" "postgresql_disk_queue_depth" {
@@ -109,5 +109,5 @@ EOQ
   timeout_h           = 0
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "team:claranet", "created-by:terraform"], var.postgresql_disk_queue_extra_tags)
+  tags = concat(["env:${var.environment}", "type:database", "provider:postgres", "resource:postgresql", "created-by:terraform"], var.postgresql_disk_queue_extra_tags)
 }

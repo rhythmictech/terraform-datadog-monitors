@@ -23,5 +23,5 @@ EOQ
   include_tags        = true
   require_full_window = true
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:sqlserver", "resource:sqlserver", "team:claranet", "created-by:terraform"], var.sqlserver_availability_extra_tags)
+  tags = concat(["env:${var.environment}", "type:database", "provider:sqlserver", "resource:sqlserver", "created-by:terraform"], var.sqlserver_availability_extra_tags)
 }

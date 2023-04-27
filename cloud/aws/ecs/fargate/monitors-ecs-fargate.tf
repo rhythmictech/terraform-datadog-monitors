@@ -26,7 +26,7 @@ EOQ
 
 
   include_tags = true
-  tags         = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "team:claranet", "created-by:terraform", "category:service"], var.service_check_extra_tags)
+  tags         = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "created-by:terraform", "category:service"], var.service_check_extra_tags)
 }
 
 resource "datadog_monitor" "cpu_utilization" {
@@ -57,7 +57,7 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "team:claranet", "created-by:terraform"], var.cpu_utilization_extra_tags)
+  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "created-by:terraform"], var.cpu_utilization_extra_tags)
 
 }
 
@@ -91,6 +91,6 @@ EOQ
   timeout_h           = var.timeout_h
   include_tags        = true
 
-  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "team:claranet", "created-by:terraform"], var.memory_utilization_extra_tags)
+  tags = concat(["env:${var.environment}", "type:cloud", "provider:aws", "resource:ecs_fargate", "created-by:terraform"], var.memory_utilization_extra_tags)
 
 }
