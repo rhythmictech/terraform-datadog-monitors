@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-network-dns" {
-  source      = "claranet/monitors/datadog//network/dns"
+  source      = "rhythmictech/monitors/datadog//network/dns"
   version     = "{revision}"
 
   environment = var.environment

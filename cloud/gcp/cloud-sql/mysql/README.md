@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-gcp-cloud-sql-mysql" {
-  source      = "claranet/monitors/datadog//cloud/gcp/cloud-sql/mysql"
+  source      = "rhythmictech/monitors/datadog//cloud/gcp/cloud-sql/mysql"
   version     = "{revision}"
 
   environment = var.environment

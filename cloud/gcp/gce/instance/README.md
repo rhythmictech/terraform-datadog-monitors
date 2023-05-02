@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-gcp-gce-instance" {
-  source      = "claranet/monitors/datadog//cloud/gcp/gce/instance"
+  source      = "rhythmictech/monitors/datadog//cloud/gcp/gce/instance"
   version     = "{revision}"
 
   environment = var.environment

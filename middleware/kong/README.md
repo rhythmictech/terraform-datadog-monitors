@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-middleware-kong" {
-  source      = "claranet/monitors/datadog//middleware/kong"
+  source      = "rhythmictech/monitors/datadog//middleware/kong"
   version     = "{revision}"
 
   environment = var.environment

@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-rds-aurora-mysql" {
-  source      = "claranet/monitors/datadog//cloud/aws/rds/aurora/mysql"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/rds/aurora/mysql"
   version     = "{revision}"
 
   environment = var.environment

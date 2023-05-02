@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-caas-kubernetes-workload" {
-  source      = "claranet/monitors/datadog//caas/kubernetes/workload"
+  source      = "rhythmictech/monitors/datadog//caas/kubernetes/workload"
   version     = "{revision}"
 
   environment = var.environment

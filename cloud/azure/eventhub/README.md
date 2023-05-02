@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-eventhub" {
-  source      = "claranet/monitors/datadog//cloud/azure/eventhub"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/eventhub"
   version     = "{revision}"
 
   environment = var.environment

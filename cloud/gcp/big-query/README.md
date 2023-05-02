@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-gcp-big-query" {
-  source      = "claranet/monitors/datadog//cloud/gcp/big-query"
+  source      = "rhythmictech/monitors/datadog//cloud/gcp/big-query"
   version     = "{revision}"
 
   environment = var.environment

@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-database-mongodb" {
-  source      = "claranet/monitors/datadog//database/mongodb"
+  source      = "rhythmictech/monitors/datadog//database/mongodb"
   version     = "{revision}"
 
   environment = var.environment

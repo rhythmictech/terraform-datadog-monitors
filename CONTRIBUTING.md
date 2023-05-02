@@ -13,7 +13,7 @@ Please note we have a [code of conduct](#code-of-conduct), follow it in all your
 
 * If you would like to work on monitors you must follow our [templating best practices](TEMPLATING.md) to make this base homogenous and generic.
 
-* After any change, you will need to run the [auto update scripts](https://github.com/claranet/terraform-datadog-scripts/blob/master/README.md) to make sure all is up to date otherwise the CI pipeline will fail.
+* After any change, you will need to run the [auto update scripts](https://github.com/rhythmictech/terraform-datadog-scripts/blob/master/README.md) to make sure all is up to date otherwise the CI pipeline will fail.
 
 ## Pull Request Process
 

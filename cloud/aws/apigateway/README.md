@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-apigateway" {
-  source      = "claranet/monitors/datadog//cloud/aws/apigateway"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/apigateway"
   version     = "{revision}"
 
   environment = var.environment

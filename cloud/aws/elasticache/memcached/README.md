@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-elasticache-memcached" {
-  source      = "claranet/monitors/datadog//cloud/aws/elasticache/memcached"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/elasticache/memcached"
   version     = "{revision}"
 
   environment = var.environment

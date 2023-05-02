@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-network-http-webcheck" {
-  source      = "claranet/monitors/datadog//network/http/webcheck"
+  source      = "rhythmictech/monitors/datadog//network/http/webcheck"
   version     = "{revision}"
 
   environment = var.environment

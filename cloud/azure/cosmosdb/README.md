@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-cosmosdb" {
-  source      = "claranet/monitors/datadog//cloud/azure/cosmosdb"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/cosmosdb"
   version     = "{revision}"
 
   environment = var.environment

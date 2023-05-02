@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-ecs-fargate" {
-  source      = "claranet/monitors/datadog//cloud/aws/ecs/fargate"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/ecs/fargate"
   version     = "{revision}"
 
   environment = var.environment

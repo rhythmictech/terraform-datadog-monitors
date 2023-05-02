@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-keyvault" {
-  source      = "claranet/monitors/datadog//cloud/azure/keyvault"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/keyvault"
   version     = "{revision}"
 
   environment = var.environment

@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-load-balancer" {
-  source      = "claranet/monitors/datadog//cloud/azure/load-balancer"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/load-balancer"
   version     = "{revision}"
 
   environment = var.environment

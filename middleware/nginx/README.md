@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-middleware-nginx" {
-  source      = "claranet/monitors/datadog//middleware/nginx"
+  source      = "rhythmictech/monitors/datadog//middleware/nginx"
   version     = "{revision}"
 
   environment = var.environment

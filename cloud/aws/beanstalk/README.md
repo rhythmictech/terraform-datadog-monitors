@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-beanstalk" {
-  source      = "claranet/monitors/datadog//cloud/aws/beanstalk"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/beanstalk"
   version     = "{revision}"
 
   environment = var.environment

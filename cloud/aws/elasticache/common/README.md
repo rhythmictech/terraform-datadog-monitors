@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-elasticache-common" {
-  source      = "claranet/monitors/datadog//cloud/aws/elasticache/common"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/elasticache/common"
   version     = "{revision}"
 
   environment = var.environment

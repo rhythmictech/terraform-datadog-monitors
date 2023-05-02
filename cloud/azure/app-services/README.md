@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-app-services" {
-  source      = "claranet/monitors/datadog//cloud/azure/app-services"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/app-services"
   version     = "{revision}"
 
   environment = var.environment

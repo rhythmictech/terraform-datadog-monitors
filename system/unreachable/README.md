@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-system-unreachable" {
-  source      = "claranet/monitors/datadog//system/unreachable"
+  source      = "rhythmictech/monitors/datadog//system/unreachable"
   version     = "{revision}"
 
   environment = var.environment

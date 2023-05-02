@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-system-generic" {
-  source      = "claranet/monitors/datadog//system/generic"
+  source      = "rhythmictech/monitors/datadog//system/generic"
   version     = "{revision}"
 
   environment = var.environment

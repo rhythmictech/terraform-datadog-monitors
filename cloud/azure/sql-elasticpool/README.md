@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-sql-elasticpool" {
-  source      = "claranet/monitors/datadog//cloud/azure/sql-elasticpool"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/sql-elasticpool"
   version     = "{revision}"
 
   environment = var.environment

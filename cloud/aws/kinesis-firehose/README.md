@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-kinesis-firehose" {
-  source      = "claranet/monitors/datadog//cloud/aws/kinesis-firehose"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/kinesis-firehose"
   version     = "{revision}"
 
   environment = var.environment

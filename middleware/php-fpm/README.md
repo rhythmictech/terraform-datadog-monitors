@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-middleware-php-fpm" {
-  source      = "claranet/monitors/datadog//middleware/php-fpm"
+  source      = "rhythmictech/monitors/datadog//middleware/php-fpm"
   version     = "{revision}"
 
   environment = var.environment

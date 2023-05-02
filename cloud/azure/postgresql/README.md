@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-azure-postgresql" {
-  source      = "claranet/monitors/datadog//cloud/azure/postgresql"
+  source      = "rhythmictech/monitors/datadog//cloud/azure/postgresql"
   version     = "{revision}"
 
   environment = var.environment

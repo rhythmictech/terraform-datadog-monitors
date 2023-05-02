@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-caas-docker" {
-  source      = "claranet/monitors/datadog//caas/docker"
+  source      = "rhythmictech/monitors/datadog//caas/docker"
   version     = "{revision}"
 
   environment = var.environment

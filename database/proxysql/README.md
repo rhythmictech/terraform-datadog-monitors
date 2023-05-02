@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-database-proxysql" {
-  source      = "claranet/monitors/datadog//database/proxysql"
+  source      = "rhythmictech/monitors/datadog//database/proxysql"
   version     = "{revision}"
 
   environment = var.environment

@@ -1,6 +1,6 @@
 # v4+
 
-See [Github releases](https://github.com/claranet/terraform-datadog-monitors/releases) for versions `>= v4.0.0`.
+See [Github releases](https://github.com/rhythmictech/terraform-datadog-monitors/releases) for versions `>= v4.0.0`.
 
 # v3.6.0 (January 27, 2021)
 

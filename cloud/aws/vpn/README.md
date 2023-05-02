@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-aws-vpn" {
-  source      = "claranet/monitors/datadog//cloud/aws/vpn"
+  source      = "rhythmictech/monitors/datadog//cloud/aws/vpn"
   version     = "{revision}"
 
   environment = var.environment

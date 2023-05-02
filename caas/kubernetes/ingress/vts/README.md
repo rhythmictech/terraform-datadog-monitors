@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-caas-kubernetes-ingress-vts" {
-  source      = "claranet/monitors/datadog//caas/kubernetes/ingress/vts"
+  source      = "rhythmictech/monitors/datadog//caas/kubernetes/ingress/vts"
   version     = "{revision}"
 
   environment = var.environment

@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-caas-kubernetes-velero" {
-  source      = "claranet/monitors/datadog//caas/kubernetes/velero"
+  source      = "rhythmictech/monitors/datadog//caas/kubernetes/velero"
   version     = "{revision}"
 
   environment = var.environment
@@ -156,7 +156,7 @@ For instance, for an hourly schedule you can uncomment this block:
 
 ```
 #module "datadog-monitors-caas-kubernetes-velero" {
-#  source                                                    = "claranet/monitors/datadog//caas/kubernetes/velero"
+#  source                                                    = "rhythmictech/monitors/datadog//caas/kubernetes/velero"
 #  version                                                   = "{revision}"
 #
 #  environment                                               = var.environment
@@ -164,7 +164,7 @@ For instance, for an hourly schedule you can uncomment this block:
 #}
 
 #module "datadog-monitors-caas-kubernetes-velero-hourly" {
-#  source                                                    = "claranet/monitors/datadog//caas/kubernetes/velero"
+#  source                                                    = "rhythmictech/monitors/datadog//caas/kubernetes/velero"
 #  version                                                   = "{revision}"
 #
 #  environment                                               = var.environment

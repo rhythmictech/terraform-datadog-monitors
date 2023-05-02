@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-gcp-memorystore-redis" {
-  source      = "claranet/monitors/datadog//cloud/gcp/memorystore/redis"
+  source      = "rhythmictech/monitors/datadog//cloud/gcp/memorystore/redis"
   version     = "{revision}"
 
   environment = var.environment

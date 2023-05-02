@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-database-zookeeper" {
-  source      = "claranet/monitors/datadog//database/zookeeper"
+  source      = "rhythmictech/monitors/datadog//database/zookeeper"
   version     = "{revision}"
 
   environment = var.environment

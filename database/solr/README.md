@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-database-solr" {
-  source      = "claranet/monitors/datadog//database/solr"
+  source      = "rhythmictech/monitors/datadog//database/solr"
   version     = "{revision}"
 
   environment = var.environment

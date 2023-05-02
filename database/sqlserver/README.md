@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-database-sqlserver" {
-  source      = "claranet/monitors/datadog//database/sqlserver"
+  source      = "rhythmictech/monitors/datadog//database/sqlserver"
   version     = "{revision}"
 
   environment = var.environment

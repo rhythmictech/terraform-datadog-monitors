@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-cloud-gcp-pubsub-subscription" {
-  source      = "claranet/monitors/datadog//cloud/gcp/pubsub/subscription"
+  source      = "rhythmictech/monitors/datadog//cloud/gcp/pubsub/subscription"
   version     = "{revision}"
 
   environment = var.environment

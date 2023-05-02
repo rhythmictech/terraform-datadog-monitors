@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-network-http-ssl" {
-  source      = "claranet/monitors/datadog//network/http/ssl"
+  source      = "rhythmictech/monitors/datadog//network/http/ssl"
   version     = "{revision}"
 
   environment = var.environment

@@ -4,7 +4,7 @@
 
 ```
 module "datadog-message-alerting" {
-  source  = "claranet/monitors/datadog//common/alerting-message"
+  source  = "rhythmictech/monitors/datadog//common/alerting-message"
 
   message_alert      = var.oncall_24x7
   message_warning    = var.oncall_business_hours

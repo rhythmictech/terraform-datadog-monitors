@@ -4,7 +4,7 @@
 
 ```hcl
 module "datadog-monitors-caas-kubernetes-ark" {
-  source      = "claranet/monitors/datadog//caas/kubernetes/ark"
+  source      = "rhythmictech/monitors/datadog//caas/kubernetes/ark"
   version     = "{revision}"
 
   environment = var.environment
