@@ -1,10 +1,10 @@
-# CLOUD AWS APIGATEWAY DataDog monitors
+# CLOUD AWS SES DataDog monitors
 
 ## How to use this module
 
 ```hcl
-module "datadog-monitors-cloud-aws-apigateway" {
-  source      = "rhythmictech/monitors/datadog//cloud/aws/apigateway"
+module "datadog-monitors-cloud-aws-ses" {
+  source      = "rhythmictech/monitors/datadog//cloud/aws/ses"
   version     = "{revision}"
 
   environment = var.environment
@@ -17,9 +17,8 @@ module "datadog-monitors-cloud-aws-apigateway" {
 
 Creates DataDog monitors with the following checks:
 
-- API Gateway HTTP 4xx errors
-- API Gateway HTTP 5xx errors
-- API Gateway latency
+- SES bounce rate
+- SES complaint rate
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -43,39 +42,30 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [datadog_monitor.API_Gateway_latency](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/monitor) | resource |
-| [datadog_monitor.API_http_4xx_errors_count](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/monitor) | resource |
-| [datadog_monitor.API_http_5xx_errors_count](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/monitor) | resource |
+| [datadog_monitor.SES_bounce_rate](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/monitor) | resource |
+| [datadog_monitor.SES_complaint_rate](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/monitor) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_artificial_requests_count"></a> [artificial\_requests\_count](#input\_artificial\_requests\_count) | Number of false requests used to mitigate false positive in case of low trafic | `number` | `5` | no |
+| <a name="input_bounce_rate_enabled"></a> [bounce\_rate\_enabled](#input\_bounce\_rate\_enabled) | Flag to enable SES bounce rate monitor | `string` | `"true"` | no |
+| <a name="input_bounce_rate_extra_tags"></a> [bounce\_rate\_extra\_tags](#input\_bounce\_rate\_extra\_tags) | Extra tags for SES bounce rate monitor | `list(string)` | `[]` | no |
+| <a name="input_bounce_rate_message"></a> [bounce\_rate\_message](#input\_bounce\_rate\_message) | Custom message for SES bounce rate monitor | `string` | `""` | no |
+| <a name="input_bounce_rate_threshold_critical"></a> [bounce\_rate\_threshold\_critical](#input\_bounce\_rate\_threshold\_critical) | Alerting threshold in percentage | `number` | `0.3` | no |
+| <a name="input_bounce_rate_threshold_warning"></a> [bounce\_rate\_threshold\_warning](#input\_bounce\_rate\_threshold\_warning) | Warning threshold in percentage | `number` | `0.2` | no |
+| <a name="input_bounce_rate_time_aggregator"></a> [bounce\_rate\_time\_aggregator](#input\_bounce\_rate\_time\_aggregator) | Monitor aggregator for SES bounce rate [available values: min, max or avg] | `string` | `"avg"` | no |
+| <a name="input_bounce_rate_timeframe"></a> [bounce\_rate\_timeframe](#input\_bounce\_rate\_timeframe) | Monitor timeframe for SES bounce rate [available values: `last_#m` (1, 5, 10, 15, or 30), `last_#h` (1, 2, or 4), or `last_1d`] | `string` | `"last_1h"` | no |
+| <a name="input_complaint_rate_enabled"></a> [complaint\_rate\_enabled](#input\_complaint\_rate\_enabled) | Flag to enable SES complaint rate monitor | `string` | `"true"` | no |
+| <a name="input_complaint_rate_extra_tags"></a> [complaint\_rate\_extra\_tags](#input\_complaint\_rate\_extra\_tags) | Extra tags for SES complaint rate monitor | `list(string)` | `[]` | no |
+| <a name="input_complaint_rate_message"></a> [complaint\_rate\_message](#input\_complaint\_rate\_message) | Custom message for SES complaint rate monitor | `string` | `""` | no |
+| <a name="input_complaint_rate_threshold_critical"></a> [complaint\_rate\_threshold\_critical](#input\_complaint\_rate\_threshold\_critical) | Alerting threshold in percentage | `number` | `0.3` | no |
+| <a name="input_complaint_rate_threshold_warning"></a> [complaint\_rate\_threshold\_warning](#input\_complaint\_rate\_threshold\_warning) | Warning threshold in percentage | `number` | `0.2` | no |
+| <a name="input_complaint_rate_time_aggregator"></a> [complaint\_rate\_time\_aggregator](#input\_complaint\_rate\_time\_aggregator) | Monitor aggregator for SES complaint rate [available values: min, max or avg] | `string` | `"avg"` | no |
+| <a name="input_complaint_rate_timeframe"></a> [complaint\_rate\_timeframe](#input\_complaint\_rate\_timeframe) | Monitor timeframe for SES complaint rate [available values: `last_#m` (1, 5, 10, 15, or 30), `last_#h` (1, 2, or 4), or `last_1d`] | `string` | `"last_1h"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment | `string` | n/a | yes |
 | <a name="input_evaluation_delay"></a> [evaluation\_delay](#input\_evaluation\_delay) | Delay in seconds for the metric evaluation | `number` | `900` | no |
 | <a name="input_filter_tags"></a> [filter\_tags](#input\_filter\_tags) | Tags used for filtering | `string` | `"*"` | no |
-| <a name="input_http_4xx_requests_enabled"></a> [http\_4xx\_requests\_enabled](#input\_http\_4xx\_requests\_enabled) | Flag to enable API Gateway HTTP 4xx requests monitor | `string` | `"true"` | no |
-| <a name="input_http_4xx_requests_extra_tags"></a> [http\_4xx\_requests\_extra\_tags](#input\_http\_4xx\_requests\_extra\_tags) | Extra tags for API Gateway HTTP 4xx requests monitor | `list(string)` | `[]` | no |
-| <a name="input_http_4xx_requests_message"></a> [http\_4xx\_requests\_message](#input\_http\_4xx\_requests\_message) | Custom message for API Gateway HTTP 4xx requests monitor | `string` | `""` | no |
-| <a name="input_http_4xx_requests_threshold_critical"></a> [http\_4xx\_requests\_threshold\_critical](#input\_http\_4xx\_requests\_threshold\_critical) | Maximum critical acceptable percent of 4xx errors | `number` | `30` | no |
-| <a name="input_http_4xx_requests_threshold_warning"></a> [http\_4xx\_requests\_threshold\_warning](#input\_http\_4xx\_requests\_threshold\_warning) | Maximum warning acceptable percent of 4xx errors | `number` | `15` | no |
-| <a name="input_http_4xx_requests_time_aggregator"></a> [http\_4xx\_requests\_time\_aggregator](#input\_http\_4xx\_requests\_time\_aggregator) | Monitor aggregator for API HTTP 4xx requests [available values: min, max or avg] | `string` | `"min"` | no |
-| <a name="input_http_4xx_requests_timeframe"></a> [http\_4xx\_requests\_timeframe](#input\_http\_4xx\_requests\_timeframe) | Monitor timeframe for API HTTP 4xx requests [available values: `last_#m` (1, 5, 10, 15, or 30), `last_#h` (1, 2, or 4), or `last_1d`] | `string` | `"last_5m"` | no |
-| <a name="input_http_5xx_requests_enabled"></a> [http\_5xx\_requests\_enabled](#input\_http\_5xx\_requests\_enabled) | Flag to enable API Gateway HTTP 5xx requests monitor | `string` | `"true"` | no |
-| <a name="input_http_5xx_requests_extra_tags"></a> [http\_5xx\_requests\_extra\_tags](#input\_http\_5xx\_requests\_extra\_tags) | Extra tags for API Gateway HTTP 5xx requests monitor | `list(string)` | `[]` | no |
-| <a name="input_http_5xx_requests_message"></a> [http\_5xx\_requests\_message](#input\_http\_5xx\_requests\_message) | Custom message for API Gateway HTTP 5xx requests monitor | `string` | `""` | no |
-| <a name="input_http_5xx_requests_threshold_critical"></a> [http\_5xx\_requests\_threshold\_critical](#input\_http\_5xx\_requests\_threshold\_critical) | Maximum critical acceptable percent of 5xx errors | `number` | `20` | no |
-| <a name="input_http_5xx_requests_threshold_warning"></a> [http\_5xx\_requests\_threshold\_warning](#input\_http\_5xx\_requests\_threshold\_warning) | Maximum warning acceptable percent of 5xx errors | `number` | `10` | no |
-| <a name="input_http_5xx_requests_time_aggregator"></a> [http\_5xx\_requests\_time\_aggregator](#input\_http\_5xx\_requests\_time\_aggregator) | Monitor aggregator for API HTTP 5xx requests [available values: min, max or avg] | `string` | `"min"` | no |
-| <a name="input_http_5xx_requests_timeframe"></a> [http\_5xx\_requests\_timeframe](#input\_http\_5xx\_requests\_timeframe) | Monitor timeframe for API HTTP 5xx requests [available values: `last_#m` (1, 5, 10, 15, or 30), `last_#h` (1, 2, or 4), or `last_1d`] | `string` | `"last_5m"` | no |
-| <a name="input_latency_enabled"></a> [latency\_enabled](#input\_latency\_enabled) | Flag to enable API Gateway latency monitor | `string` | `"true"` | no |
-| <a name="input_latency_extra_tags"></a> [latency\_extra\_tags](#input\_latency\_extra\_tags) | Extra tags for API Gateway latency monitor | `list(string)` | `[]` | no |
-| <a name="input_latency_message"></a> [latency\_message](#input\_latency\_message) | Custom message for API Gateway latency monitor | `string` | `""` | no |
-| <a name="input_latency_threshold_critical"></a> [latency\_threshold\_critical](#input\_latency\_threshold\_critical) | Alerting threshold in milliseconds | `number` | `3000` | no |
-| <a name="input_latency_threshold_warning"></a> [latency\_threshold\_warning](#input\_latency\_threshold\_warning) | Warning threshold in milliseconds | `number` | `1000` | no |
-| <a name="input_latency_time_aggregator"></a> [latency\_time\_aggregator](#input\_latency\_time\_aggregator) | Monitor aggregator for API Gateway latency [available values: min, max or avg] | `string` | `"min"` | no |
-| <a name="input_latency_timeframe"></a> [latency\_timeframe](#input\_latency\_timeframe) | Monitor timeframe for API latency [available values: `last_#m` (1, 5, 10, 15, or 30), `last_#h` (1, 2, or 4), or `last_1d`] | `string` | `"last_5m"` | no |
 | <a name="input_message"></a> [message](#input\_message) | Message sent when a monitor is triggered | `any` | n/a | yes |
 | <a name="input_new_group_delay"></a> [new\_group\_delay](#input\_new\_group\_delay) | Delay in seconds before monitor new resource | `number` | `300` | no |
 | <a name="input_new_host_delay"></a> [new\_host\_delay](#input\_new\_host\_delay) | Delay in seconds before monitor new resource | `number` | `300` | no |
@@ -85,14 +75,10 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_API_Gateway_latency_id"></a> [API\_Gateway\_latency\_id](#output\_API\_Gateway\_latency\_id) | id for monitor API\_Gateway\_latency |
-| <a name="output_API_http_4xx_errors_count_id"></a> [API\_http\_4xx\_errors\_count\_id](#output\_API\_http\_4xx\_errors\_count\_id) | id for monitor API\_http\_4xx\_errors\_count |
-| <a name="output_API_http_5xx_errors_count_id"></a> [API\_http\_5xx\_errors\_count\_id](#output\_API\_http\_5xx\_errors\_count\_id) | id for monitor API\_http\_5xx\_errors\_count |
+No outputs.
 <!-- END_TF_DOCS -->
 ## Related documentation
 
-DataDog documentation: [https://docs.datadoghq.com/integrations/amazon_api_gateway/](https://docs.datadoghq.com/integrations/amazon_api_gateway/)
+DataDog documentation: [https://docs.datadoghq.com/integrations/amazon_ses/](https://docs.datadoghq.com/integrations/amazon_ses/)
 
-AWS API Gateway metrics documentation: [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/api-gateway-metrics-dimensions.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/api-gateway-metrics-dimensions.html)
+AWS SES metrics documentation: [https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html)
